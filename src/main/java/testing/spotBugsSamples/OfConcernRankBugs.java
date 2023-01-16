@@ -1,4 +1,4 @@
-package findBugsSamples;
+package testing.findBugsSamples;
 
 public class OfConcernRankBugs {
 	

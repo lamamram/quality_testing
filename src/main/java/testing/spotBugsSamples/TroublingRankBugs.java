@@ -1,4 +1,4 @@
-package testing;
+package testing.findBugsSamples;
 
 public class TroublingRankBugs {
 	
