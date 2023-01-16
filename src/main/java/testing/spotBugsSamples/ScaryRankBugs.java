@@ -1,4 +1,4 @@
-package testing.findBugsSamples;
+package testing.spotBugsSamples;
 
 /**
  * Scary Rank Bugs Sample
