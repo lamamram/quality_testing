@@ -76,5 +76,6 @@ fabric.properties
 
 target/
 *.class
+.checkstyle
 
 # End of https://www.gitignore.io/api/intellij
