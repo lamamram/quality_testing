@@ -8,8 +8,17 @@ import java.util.regex.Pattern;
 public class UrlRegex {
     private Pattern pattern;
     
-    public UrlRegex(String patternString) {
-        this.pattern = Pattern.compile(patternString);
+    public UrlRegex(String patternString, String flags) {
+        int compileFlags = 0;
+        for (String f : flags.split("")) {
+            if ("m".equals(f)) {
+                compileFlags |= Pattern.MULTILINE;
+            }
+            else if ("i".equals(f)){
+                compileFlags |= Pattern.CASE_INSENSITIVE;
+            }
+        }
+        this.pattern = Pattern.compile(patternString, compileFlags);
     }
     
     public List<String> captureMatch(String target){
@@ -22,9 +31,9 @@ public class UrlRegex {
         }
         return lst;
     }
-    
-    public String replace(String target, String repl) {
-        Matcher matcher = pattern.matcher(target);
-        return matcher.replaceAll(repl);
-    }
+//    
+//    public String replace(String target, String repl) {
+//        Matcher matcher = pattern.matcher(target);
+//        return matcher.replaceAll(repl);
+//    }
 }
