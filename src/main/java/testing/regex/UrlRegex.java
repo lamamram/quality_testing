@@ -8,8 +8,9 @@ import java.util.regex.Pattern;
 
 public class UrlRegex {
     private Pattern pattern;
+    private SLowDependency sd;
     
-    public UrlRegex(String patternString, String flags) {
+    public UrlRegex(String patternString, String flags, SLowDependency sd) {
         int compileFlags = 0;
         for (String f : flags.split("")) {
             if ("m".equals(f)) {
@@ -20,6 +21,8 @@ public class UrlRegex {
             }
         }
         this.pattern = Pattern.compile(patternString, compileFlags);
+        this.sd = sd;
+        
     }
     
     public List<String> captureMatch(String target){
@@ -30,7 +33,6 @@ public class UrlRegex {
                 lst.add(matcher.group(i));
             }
         }
-        SLowDependency sd = new SLowDependency();
         try {
             String param = sd.slowMethod();
         }

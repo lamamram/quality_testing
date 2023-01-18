@@ -25,7 +25,12 @@ class UrlTest {
 
     @BeforeEach
     void instantiateRegex() {
-        ur = new UrlRegex(pattern, flags);
+        try {
+            when(sd.slowMethod()).thenReturn("param");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        ur = new UrlRegex(pattern, flags, sd);
     }
 
     @Test
@@ -40,14 +45,6 @@ class UrlTest {
         String domain = "gitlab.dawan.fr";
         String path = "/branches/main";
         // Act
-        try {
-            // redefinition de la méthode lente
-            // qui renvoie la réponse immédiatement
-            when(sd.slowMethod()).thenReturn("param");
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
         List<String> groups = ur.captureMatch(proto + "://" + domain + path);
         // Assert: EXPECTED CALCULATED
         assertArrayEquals(new String[] { proto, domain, path }, groups.toArray());
