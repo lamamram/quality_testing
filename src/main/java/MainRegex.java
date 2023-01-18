@@ -11,5 +11,6 @@ public class MainRegex {
         for (String m : matches) {
             System.out.println(m);
         }
+        System.out.println(zr.replace("mon zipcode est 44245 ou 2A345", "*****"));
     }
 }
