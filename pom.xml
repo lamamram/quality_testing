@@ -106,6 +106,8 @@
                         <include>**/*Test.java</include>
                         <include>%regex[.*Test(\d?).*]</include>
                     </includes>
+                   <!-- <groups>A</groups -->
+                   <!-- <excludedGroups>B</excludedGroups> -->
                 </configuration>
             </plugin>
 

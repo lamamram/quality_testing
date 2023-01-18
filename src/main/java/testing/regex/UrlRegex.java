@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 public class UrlRegex {
     private Pattern pattern;
     
@@ -29,11 +30,18 @@ public class UrlRegex {
                 lst.add(matcher.group(i));
             }
         }
+        SLowDependency sd = new SLowDependency();
+        try {
+            String param = sd.slowMethod();
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         return lst;
     }
-//    
-//    public String replace(String target, String repl) {
-//        Matcher matcher = pattern.matcher(target);
-//        return matcher.replaceAll(repl);
-//    }
+    
+    public String replace(String target, String repl) {
+        Matcher matcher = pattern.matcher(target);
+        return matcher.replaceAll(repl);
+    }
 }
