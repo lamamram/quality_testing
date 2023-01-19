@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.regex.Matcher;
 
+import testing.regex.SLowDependency;
 import testing.regex.UrlRegex;
 import testing.regex.ZipCodeRegex;
 
@@ -23,7 +24,7 @@ public class MainRegex {
     }
     
     public static void processUrl(String pattern) {
-        UrlRegex ur = new UrlRegex(pattern);
+        UrlRegex ur = new UrlRegex(pattern, "i", new SLowDependency());
         String target = "https://www.dawan.fr/trainings/qualite-du-code";
         List<String> groups = ur.captureMatch(target);
         for (String g : groups) {
