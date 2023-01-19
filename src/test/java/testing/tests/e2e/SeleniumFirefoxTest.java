@@ -1,7 +1,7 @@
 package testing.tests.e2e;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.firefox.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -17,7 +17,7 @@ class SeleniumFirefoxTest {
 	@Test
 	@Tag("E2E")
 	void test() {
-		this.driver = new ChromeDriver();
+		this.driver = new FirefoxDriver();
         this.driver.get("https://dawan.fr");
         assertThat(this.driver.getTitle()).contains("Dawan");
 		this.driver.close();
