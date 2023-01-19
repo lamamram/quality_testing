@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 
 public class UrlRegex {
     private Pattern pattern;
+    // dépendance lente injectée
     private SLowDependency sd;
     
     public UrlRegex(String patternString, String flags, SLowDependency sd) {
@@ -33,6 +34,7 @@ public class UrlRegex {
                 lst.add(matcher.group(i));
             }
         }
+        // action lente non testée
         try {
             String param = sd.slowMethod();
         }

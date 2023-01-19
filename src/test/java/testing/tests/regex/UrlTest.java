@@ -21,15 +21,19 @@ class UrlTest {
     private UrlRegex ur;
     String pattern = "(https?|s?ftp|ftps?|ssh):\\/\\/((?:[a-z0-9_\\-]+\\.)+[a-z]{2,})((?:\\/[a-z0-9_\\-]+)+\\/?)?";
     String flags = "i";
+    // ersatz de dépendance lente
     private final SLowDependency sd = mock(SLowDependency.class);
-
+    //objet réel
+    //private final SLowDependency sd = new SLowDependency();
     @BeforeEach
     void instantiateRegex() {
+        // remplacement de l'action lente
         try {
             when(sd.slowMethod()).thenReturn("param");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        // injection du mock
         ur = new UrlRegex(pattern, flags, sd);
     }
 
