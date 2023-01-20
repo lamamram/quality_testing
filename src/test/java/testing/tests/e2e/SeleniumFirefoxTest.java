@@ -14,9 +14,10 @@ class SeleniumFirefoxTest {
 	
 	private WebDriver driver;
 	
-	//@Test
+	@Test
 	@Tag("E2E")
 	void test() {
+	    //System.setProperty("webdriver.gecko.driver", "Chemin vers le driver, préférer le PATH");
 		this.driver = new FirefoxDriver();
         this.driver.get("https://dawan.fr");
         assertThat(this.driver.getTitle()).contains("Dawan");
