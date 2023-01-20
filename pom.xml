@@ -27,12 +27,18 @@
 		<project.reporting.outputEncoding>${project.encondig}</project.reporting.outputEncoding>
 	</properties>
 	<dependencies>
-		<!-- logging lib -->
+	    <!-- logging libs -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>${slf4j.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<!-- mocking + better assertions -->
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
