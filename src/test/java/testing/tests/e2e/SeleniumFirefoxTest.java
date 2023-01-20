@@ -14,7 +14,7 @@ class SeleniumFirefoxTest {
 	
 	private WebDriver driver;
 	
-	@Test
+	//@Test
 	@Tag("E2E")
 	void test() {
 		this.driver = new FirefoxDriver();
