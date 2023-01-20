@@ -9,7 +9,10 @@ import org.junit.platform.suite.api.SelectClasspathResource;
 import org.junit.platform.suite.api.Suite;
 
 @Suite
-@IncludeTags("IT")
+@IncludeTags({
+    "IT",
+    "E2E"
+})
 @IncludeEngines("cucumber")
 @SelectClasspathResource("testing/tests/bdd")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "testing.tests.bdd")
