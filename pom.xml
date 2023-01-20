@@ -15,7 +15,7 @@
 		<junit-platform-suite.version>1.9.2</junit-platform-suite.version>
 		
 		<cucumber.version>7.11.0</cucumber.version>
-		<selenium-java.version>3.14.0</selenium-java.version>
+		<selenium-java.version>3.141.0</selenium-java.version>
 		
 		<maven-surefire-plugin.version>3.0.0-M8</maven-surefire-plugin.version>
 		<jacoco.version>0.8.7</jacoco.version>
