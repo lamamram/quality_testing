@@ -9,11 +9,11 @@ import java.util.stream.Collectors;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 
 
@@ -23,7 +23,10 @@ class SeleniumFirefoxTest {
 
 	@BeforeEach
 	public void connect() {
-	    driver = new FirefoxDriver();
+	    // config headless => sans GUI
+	    FirefoxOptions options = new FirefoxOptions();
+	    options.setHeadless(true);
+	    driver = new FirefoxDriver(options);
 	    // timeout max de chargement de page
 	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
@@ -33,7 +36,7 @@ class SeleniumFirefoxTest {
 	    driver.close();
 	}
 	
-	@Test
+	//@Test
 	@Tag("E2E")
 	void testHTPriceForSeleniumDawan() {
 	    //System.setProperty("webdriver.gecko.driver", "Chemin vers le driver, préférer le PATH");

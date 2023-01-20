@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.regex.Matcher;
 
 import testing.regex.SLowDependency;
 import testing.regex.UrlRegex;
