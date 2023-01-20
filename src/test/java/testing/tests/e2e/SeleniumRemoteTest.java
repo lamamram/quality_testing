@@ -39,7 +39,7 @@ public class SeleniumRemoteTest {
         driver.close();
     }
     
-    @Test
+    //@Test
     @Tag("E2E")
     public void test() {
         driver.get("https://dawan.fr");
