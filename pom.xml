@@ -20,8 +20,10 @@
 		<maven-surefire-plugin.version>3.0.0-M8</maven-surefire-plugin.version>
 		<jacoco.version>0.8.7</jacoco.version>
 		<java.version>17</java.version>
+		<!-- les proproétés de compilateur suffisent: pas besoin du plugin -->
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<!-- gestoin de l'encodage des sources et des rapports -->
 		<project.encondig>UTF-8</project.encondig>
 		<project.build.sourceEncoding>${project.encondig}</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>${project.encondig}</project.reporting.outputEncoding>

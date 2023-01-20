@@ -1,12 +1,10 @@
 package testing.tests.parametrized;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static java.util.stream.Collectors.toList;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.stream.Stream;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -21,6 +19,7 @@ class MinMaxTest {
     // passage en paramétré + sélection de
     // la méthode génératrice
     @ParameterizedTest
+    @Tag("Unit")
     @MethodSource("generator")
     //@ValueSource({{1, 3, 4}, 1, 4})
     void testMinMaxGenerator(int[] nums, int expectedMin, int expectedMax) {

@@ -1,16 +1,16 @@
 package testing.tests.assertj;
 
 
+import static java.util.Arrays.asList;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.util.List;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-
-import static java.util.Arrays.asList;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import testing.assertj.Invoice;
 import testing.assertj.InvoiceFilter;
@@ -22,6 +22,7 @@ class InvoiceFilterTest {
     private final InvoiceFilter filter = new InvoiceFilter(issuedInvoices);
 
     @Test
+    @Tag("Unit")
     void filterInvoices() {
         final var mauricio = new Invoice("Mauricio", 20);
         final var steve = new Invoice("Steve", 99);
